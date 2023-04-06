@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { AppLayout } from "@/layout/AppLayout";
+import { Main } from "@/components/Main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppLayout>
-        <div>content goes here</div>
+        <Main />
       </AppLayout>
     </>
   );
