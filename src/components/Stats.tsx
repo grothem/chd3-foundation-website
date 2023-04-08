@@ -12,7 +12,7 @@ export const Stats = () => {
       justifyContent="space-evenly"
       width="100vw"
       py={5}
-      backgroundColor="gray.50"
+      backgroundColor="primary"
     >
       <Flex
         direction="column"
@@ -21,8 +21,8 @@ export const Stats = () => {
         borderColor="red"
       >
         <Icon as={UserIcon} />
-        <Text>100</Text>
-        <Text>Known cases</Text>
+        <Text color="gray.800">100</Text>
+        <Text color="gray.800">Known cases</Text>
       </Flex>
       <Flex
         direction="column"
