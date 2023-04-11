@@ -19,7 +19,7 @@ export default function Research() {
         <CampeauBio />
         <FishBio />
         <VStack my={4}>
-          <Heading fontSize="xl">Associated sites</Heading>
+          <Heading fontSize="xl">Associated Sites</Heading>
           <VStack mt={2}>
             <Link
               color="primary"
@@ -39,6 +39,60 @@ export default function Research() {
               https://twitter.com/Lot_SB
             </Link>
           </VStack>
+        </VStack>
+        <VStack my={4}>
+          <Heading fontSize="xl">For Clinicians</Heading>
+          <Text align="center" mx={{ base: 4, md: 10 }}>
+            <Text>
+              We are collecting information from physicians on additional
+              patients here:{" "}
+              <Link
+                color="primary"
+                isExternal
+                href="https://humandiseasegenes.nl/chd3/"
+              >
+                https://humandiseasegenes.nl/chd3/
+              </Link>
+            </Text>
+            <br />
+            <Text>
+              We are also collecting DNA or blood for episignatures with Dr.
+              Rosanna Weksberg.
+            </Text>
+          </Text>
+        </VStack>
+        <VStack mt={4} mb={20}>
+          <Heading fontSize="xl">For Families</Heading>
+          <Text align="center" mx={{ base: 4, md: 10 }}>
+            <Text>
+              We are conducting neurodevelopmental questionnaires with parents
+              here:{" "}
+              <Link
+                color="primary"
+                isExternal
+                href="https://is.gd/neurodevelopmentalstudy"
+              >
+                https://is.gd/neurodevelopmentalstudy
+              </Link>
+            </Text>
+            <br />
+            <Text>
+              Abnormal pain sensitivity questionnaire study with Kimberly Lobo (
+              <a href="mailto:Kimberly.Lobo@childrens.harvard.edu">
+                Kimberly.Lobo@childrens.harvard.edu
+              </a>
+              )
+            </Text>
+            <br />
+            <Text>
+              EEGs with auditory stimulation and high-resolution MRIs if the
+              family can cover their travel to Montreal (
+              <a href="mailto:khadije.jizi.hsj@ssss.gouv.qc.ca">
+                khadije.jizi.hsj@ssss.gouv.qc.ca
+              </a>
+              ).
+            </Text>
+          </Text>
         </VStack>
       </VStack>
       <Footer />

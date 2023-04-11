@@ -14,15 +14,16 @@ import NextLink from "next/link";
 import { ReactNode } from "react";
 import { CHD3Icon } from "./CHD3Icon";
 import { HeartIcon } from "@heroicons/react/24/outline";
+import { FaFacebook, FaPaypal } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
   {
-    label: "Facebook Page - public",
+    label: "CHD3 Group",
     href: "TODO",
   },
   {
-    label: "Facebook Page - private",
-    href: "TODO",
+    label: "Family Support Group",
+    href: "https://www.facebook.com/groups/1742254126095885",
   },
 ];
 
@@ -42,15 +43,32 @@ export const Footer = () => {
           <Stack align={"flex-start"}>
             <ListHeader>Social</ListHeader>
             {SOCIAL_LINKS.map((link) => (
-              <Link key={link.label} href={link.href}>
-                {link.label}
-              </Link>
+              <Stack key={link.label} direction="row" align="center">
+                <FaFacebook />
+                <Link href={link.href} isExternal>
+                  {link.label}
+                </Link>
+              </Stack>
             ))}
           </Stack>
 
           <Stack align={"flex-start"}>
             <ListHeader>Support us</ListHeader>
-            <Link>pay pal</Link>
+            <Stack direction="row" align="center">
+              <FaPaypal />
+              <Link
+                isExternal
+                href="https://www.paypal.com/donate/?hosted_button_id=EPJTXCFF2LBSY"
+              >
+                Pay Pal
+              </Link>
+            </Stack>
+          </Stack>
+          <Stack align={"flex-start"}>
+            <ListHeader>Contact us</ListHeader>
+            <a href="mailto:chd3foundation@gmail.com">
+              chd3foundation@gmail.com
+            </a>
           </Stack>
         </SimpleGrid>
       </Container>
