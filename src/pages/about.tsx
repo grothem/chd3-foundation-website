@@ -121,7 +121,15 @@ const AbbyBio = () => {
     <BioTemplate
       name="Abby Grothe"
       title="Co-Founding Board Member, Co-Treasurer"
-      bio={<Text>bio goes here</Text>}
+      bio={
+        <Text>
+          Abby lives in Iowa with her husband, Mark and their 3 children. Their
+          daughter Elsie is 6 years old and was diagnosed with Snijders-blok
+          Campeau Syndrome around 2 years old. Abby previously worked as a
+          mental health therapist and feels passionately about helping her
+          daughter cope with any challenges she faces.
+        </Text>
+      }
     />
   );
 };
