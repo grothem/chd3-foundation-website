@@ -1,10 +1,20 @@
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  VStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { Stats } from "./Stats";
 
 export const Main = () => {
   return (
     <Box>
-      <Flex margin={4} p={6} boxShadow="md" rounded="lg">
+      <VStack align="st" margin={4} p={6}>
+        <Heading fontSize="2xl">
+          What is Snijders Blok-Campeau Syndrome?
+        </Heading>
         <Text color="gray.600">
           Snijders Blok-Campeau Syndrome is a rare neurodevelopmental disorder
           caused by mutations in the CHD3 gene, which has an important role
@@ -20,8 +30,10 @@ export const Main = () => {
           facial features. Many children have feeding difficulties, and sitting,
           standing, and walking are often delayed.
         </Text>
-      </Flex>
-      <Stats />
+      </VStack>
+      <Box my={6}>
+        <Stats />
+      </Box>
     </Box>
   );
 };

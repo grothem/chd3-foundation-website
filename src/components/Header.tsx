@@ -22,9 +22,12 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { CHD3Icon } from "./CHD3Icon";
 
-const Links = ["Bios", "Projects", "Team"];
+const Links = [
+  { name: "About Us", href: "about" },
+  { name: "Research", href: "research" },
+];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link
     as={NextLink}
     px={2}
@@ -34,7 +37,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"/bios"}
+    href={"/" + href}
   >
     {children}
   </Link>
@@ -62,11 +65,13 @@ export default function Header() {
         <HStack spacing={8} alignItems={"center"}>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
-              <NavLink key={link}>{link}</NavLink>
+              <NavLink key={link.name} href={link.href}>
+                {link.name}
+              </NavLink>
             ))}
           </HStack>
         </HStack>
-        <Flex alignItems={"center"}>
+        {/* <Flex alignItems={"center"}>
           <Menu>
             <MenuButton
               as={Button}
@@ -89,16 +94,20 @@ export default function Header() {
               <MenuItem>Link 3</MenuItem>
             </MenuList>
           </Menu>
-        </Flex>
+        </Flex> */}
       </Flex>
 
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
-          <Stack as={"nav"} spacing={4}>
-            {Links.map((link) => (
-              <NavLink key={link}>{link}</NavLink>
-            ))}
-          </Stack>
+          <Flex justifyContent="end">
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link.name} href={link.href}>
+                  {link.name}
+                </NavLink>
+              ))}
+            </Stack>
+          </Flex>
         </Box>
       ) : null}
     </Box>

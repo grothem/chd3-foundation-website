@@ -77,7 +77,7 @@ export const Footer = () => {
           </NextLink>
         </Flex>
         <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          Created by the CHD3 foundation something something...
+          Created by the CHD3 foundation...
           <Link>Contributors</Link>
         </Text>
       </Box>
