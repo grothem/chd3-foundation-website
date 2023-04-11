@@ -121,6 +121,7 @@ const AbbyBio = () => {
     <BioTemplate
       name="Abby Grothe"
       title="Co-Founding Board Member, Co-Treasurer"
+      image="bio/abby.jpg"
       bio={
         <Text>
           Abby lives in Iowa with her husband, Mark and their 3 children. Their
@@ -159,6 +160,7 @@ const ChristineBio = () => {
     <BioTemplate
       name="Christine Smith"
       title="Co-Founding Board Member"
+      image="bio/christine.jpg"
       bio={
         <Text>
           Christine resides in Colorado with her husband, Greg and their 4 kids.

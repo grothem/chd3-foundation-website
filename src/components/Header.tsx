@@ -47,7 +47,7 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box px={4} bg="background" height={{ base: "150px", md: "175px" }}>
+    <Box px={4} bg="backgroundDark" height={{ base: "150px", md: "175px" }}>
       <Box position="absolute">
         <Link href={"/"}>
           <CHD3Icon
