@@ -7,10 +7,13 @@ import {
   SimpleGrid,
   useColorModeValue,
   Flex,
+  Icon,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 import { ReactNode } from "react";
+import { CHD3Icon } from "./CHD3Icon";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
 const SOCIAL_LINKS = [
   {
@@ -71,14 +74,12 @@ export const Footer = () => {
         >
           <NextLink href={"/"} passHref>
             <Link>
-              LOGO
-              {/* <Icon as={Logo} w={{ base: 12 }} h={{ base: 12 }} /> */}
+              <Icon as={HeartIcon} />
             </Link>
           </NextLink>
         </Flex>
         <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          Created by the CHD3 foundation...
-          <Link>Contributors</Link>
+          Created by the CHD3 Foundation
         </Text>
       </Box>
     </Box>

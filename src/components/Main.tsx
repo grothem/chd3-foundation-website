@@ -11,11 +11,11 @@ import { Stats } from "./Stats";
 export const Main = () => {
   return (
     <Box>
-      <VStack align="st" margin={4} p={6}>
+      <VStack margin={4} p={6}>
         <Heading fontSize="2xl">
           What is Snijders Blok-Campeau Syndrome?
         </Heading>
-        <Text color="gray.600">
+        <Text color="gray.600" maxWidth={{ base: "90vw", md: "75vw" }}>
           Snijders Blok-Campeau Syndrome is a rare neurodevelopmental disorder
           caused by mutations in the CHD3 gene, which has an important role
           during early brain development. This gene makes a protein that is
