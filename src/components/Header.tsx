@@ -23,6 +23,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { CHD3Icon } from "./CHD3Icon";
 
 const Links = [
+  { name: "Home", href: "" },
   { name: "About Us", href: "about" },
   { name: "Research", href: "research" },
 ];
@@ -105,7 +106,15 @@ export default function Header() {
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Flex justifyContent="end">
-            <Stack as={"nav"} spacing={4}>
+            <Stack
+              as={"nav"}
+              spacing={4}
+              background="backgroundLight"
+              zIndex={100}
+              borderRadius="md"
+              border="1px"
+              borderColor="backgroundDark"
+            >
               {Links.map((link) => (
                 <NavLink key={link.name} href={link.href}>
                   {link.name}
