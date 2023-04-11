@@ -3,16 +3,10 @@ import NextLink from "next/link";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -21,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { CHD3Icon } from "./CHD3Icon";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
 const Links = [
   { name: "Home", href: "" },
@@ -48,14 +43,19 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box px={4} bg="backgroundDark" height={{ base: "150px", md: "175px" }}>
+    <Box
+      px={4}
+      bg="backgroundDark"
+      height={{ base: "150px", md: "175px" }}
+      position="relative"
+    >
       <Box position="absolute">
         <Link href={"/"}>
           <CHD3Icon
             mt={-3}
             ml={{ base: 0, md: 10, lg: 10 }}
             height={{ base: "170px", md: "180px", lg: "200px" }}
-            width={{ base: "280px", md: "290px", lg: "330px" }}
+            width={{ base: "250px", md: "290px", lg: "330px" }}
           />
         </Link>
       </Box>
@@ -102,7 +102,23 @@ export default function Header() {
           </Menu>
         </Flex> */}
       </Flex>
-
+      <Link
+        isExternal
+        href="https://www.paypal.com/donate/?hosted_button_id=EPJTXCFF2LBSY"
+      >
+        <Button
+          backgroundColor="primary"
+          color="background"
+          variant="solid"
+          _hover={{ bg: "#273166" }}
+          position="absolute"
+          right="4"
+          bottom="4"
+          rightIcon={<Icon mr={2} as={HeartIcon} />}
+        >
+          Support us
+        </Button>
+      </Link>
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Flex justifyContent="end">
