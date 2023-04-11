@@ -47,10 +47,15 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box px={4} bg="background" height="175px">
+    <Box px={4} bg="background" height={{ base: "150px", md: "175px" }}>
       <Box position="absolute">
         <Link href={"/"}>
-          <CHD3Icon height="170px" width="280px" />
+          <CHD3Icon
+            mt={-3}
+            ml={{ base: 0, md: 10, lg: 10 }}
+            height={{ base: "170px", md: "180px", lg: "200px" }}
+            width={{ base: "280px", md: "290px", lg: "330px" }}
+          />
         </Link>
       </Box>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
