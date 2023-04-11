@@ -212,7 +212,11 @@ const BioTemplate = ({
         </Heading>
         <Text fontWeight={600}>{title}</Text>
       </VStack>
-      <Text align="center" px={4} color="gray.600">
+      <Text
+        maxWidth={{ base: "90vw", md: "75vw", lg: "50vw" }}
+        align="center"
+        color="gray.600"
+      >
         {bio}
       </Text>
     </VStack>

@@ -80,9 +80,7 @@ const CampeauBio = () => {
             efforts of these researchers with the critical collaboration of
             clinicians, bioinformaticians and families allowed the eventual
             characterization of the syndrome caused by impaired activity of this
-            chromatin remodeler. Associated sites:
-            https://www.mpi.nl/people/fisher-simon-e
-            https://irp.nih.gov/pi/paul-wade https://twitter.com/Lot_SB
+            chromatin remodeler.
           </Text>
         </>
       }
@@ -143,7 +141,12 @@ const BioTemplate = ({
           {name}
         </Heading>
       </VStack>
-      <Text align="center" px={4} color="gray.600">
+      <Text
+        maxWidth={{ base: "90vw", md: "75vw", lg: "50vw" }}
+        align="center"
+        px={4}
+        color="gray.600"
+      >
         {bio}
       </Text>
     </VStack>
