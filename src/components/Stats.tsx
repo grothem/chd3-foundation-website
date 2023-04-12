@@ -14,13 +14,12 @@ export const Stats = () => {
       width="100vw"
       py={{ base: 4, md: 6 }}
       backgroundColor="primary"
+      boxShadow="lg"
     >
-      <Flex direction="column" alignItems="center">
-        <Icon as={UserIcon} />
-        <Text color="gray.800" fontSize={fontSize}>
-          170
-        </Text>
-        <Text align="center" color="gray.800" fontSize={fontSize}>
+      <Flex color="background" direction="column" alignItems="center">
+        <Icon mb={2} as={UserIcon} />
+        <Text fontSize={fontSize}>170</Text>
+        <Text align="center" fontSize={fontSize}>
           Known cases
         </Text>
       </Flex>
@@ -31,8 +30,8 @@ export const Stats = () => {
           Research participants
         </Text>
       </Flex> */}
-      <Flex direction="column" alignItems="center">
-        <Icon as={UserGroupIcon} />
+      <Flex color="background" direction="column" alignItems="center">
+        <Icon mb={2} as={UserGroupIcon} />
         <Text fontSize={fontSize}>428</Text>
         <Text align="center" fontSize={fontSize}>
           Suppport group members
