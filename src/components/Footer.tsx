@@ -12,14 +12,13 @@ import {
 import NextLink from "next/link";
 
 import { ReactNode } from "react";
-import { CHD3Icon } from "./CHD3Icon";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { FaFacebook, FaPaypal } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
   {
-    label: "CHD3 Group",
-    href: "TODO",
+    label: "CHD3 Foundation",
+    href: "https://www.facebook.com/profile.php?id=100090494154041",
   },
   {
     label: "Family Support Group",
