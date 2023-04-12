@@ -116,7 +116,11 @@ const CampeauBio = () => {
             epigenetic diseases, epilepsy, and skeletal dysplasias. They
             identify disease-causing genes, decipher disease pathophysiology,
             and improve the management of children affected by these conditions.
-            More information can be obtained by visiting www.pcampeaulab.org .
+            More information can be obtained by visiting{" "}
+            <Link isExternal href="https://www.pcampeaulab.org">
+              www.pcampeaulab.org
+            </Link>
+            .
           </Text>
           <br />
           <Text>
