@@ -1,7 +1,6 @@
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
 import {
-  Box,
   Heading,
   Image,
   Link,
@@ -16,6 +15,29 @@ export default function Research() {
     <>
       <Header />
       <VStack divider={<StackDivider borderColor="gray.200" />} spacing={4}>
+        <Text
+          maxWidth={{ base: "90vw", md: "75vw", lg: "50vw" }}
+          px={4}
+          my={8}
+          color="gray.600"
+        >
+          The groups of Dr Campeau (including Dr Rousseau) and Dr Fisher
+          (including Dr Snijders Blok) focused on CHD3 several years before the
+          2018 publication when they noted that rare de novo variants in this
+          gene were associated with neurodevelopmental issues. They collected
+          clinical and genetic information, along with samples from individuals
+          with CHD3 mutations, to better understand the effects of the
+          mutations. They collaborated together and eventually with CHD3 protein
+          expert Dr Paul Wade. Justine Rousseau and Sophie Ehresmann introduced
+          mutations in a piece of DNA and the in vitro assays were performed by
+          Joanna Twist and Motoki Takaku in Dr Wade&apos;s lab (with Justine and
+          Sophie visiting them to learn the techniques). The efforts of these
+          researchers with the critical collaboration of clinicians,
+          bioinformaticians and families allowed the eventual characterization
+          of the syndrome caused by impaired activity of this chromatin
+          remodeler.
+        </Text>
+
         <CampeauBio />
         <FishBio />
         <VStack my={4}>
@@ -40,9 +62,9 @@ export default function Research() {
             </Link>
           </VStack>
         </VStack>
-        <VStack my={4}>
+        <VStack my={4} mx={{ base: 4, md: 10 }}>
           <Heading fontSize="xl">For Clinicians</Heading>
-          <Text align="center" mx={{ base: 4, md: 10 }}>
+          <Text align="center">
             <Text>
               We are collecting information from physicians on additional
               patients here:{" "}
@@ -61,9 +83,9 @@ export default function Research() {
             </Text>
           </Text>
         </VStack>
-        <VStack mt={4} mb={20}>
+        <VStack mt={4} mb={20} mx={{ base: 4, md: 10 }}>
           <Heading fontSize="xl">For Families</Heading>
-          <Text align="center" mx={{ base: 4, md: 10 }}>
+          <Text align="center">
             <Text>
               We are conducting neurodevelopmental questionnaires with parents
               here:{" "}
@@ -121,24 +143,6 @@ const CampeauBio = () => {
               www.pcampeaulab.org
             </Link>
             .
-          </Text>
-          <br />
-          <Text>
-            The groups of Dr Campeau (including Dr Rousseau) and Dr Fisher
-            (including Dr Snijders Blok) focused on CHD3 several years before
-            the 2018 publication when they noted that rare de novo variants in
-            this gene were associated with neurodevelopmental issues. They
-            collected clinical and genetic information, along with samples from
-            individuals with CHD3 mutations, to better understand the effects of
-            the mutations. They collaborated together and eventually with CHD3
-            protein expert Dr Paul Wade. Justine Rousseau and Sophie Ehresmann
-            introduced mutations in a piece of DNA and the in vitro assays were
-            performed by Joanna Twist and Motoki Takaku in Dr Wade&apos;s lab
-            (with Justine and Sophie visiting them to learn the techniques). The
-            efforts of these researchers with the critical collaboration of
-            clinicians, bioinformaticians and families allowed the eventual
-            characterization of the syndrome caused by impaired activity of this
-            chromatin remodeler.
           </Text>
         </>
       }
