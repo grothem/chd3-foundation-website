@@ -1,13 +1,13 @@
 import {
   Container,
   Box,
+  Image,
   Stack,
   Text,
   Link,
   SimpleGrid,
   useColorModeValue,
   Flex,
-  Icon,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -91,7 +91,7 @@ export const Footer = () => {
         >
           <NextLink href={"/"} passHref>
             <Link>
-              <Icon as={HeartIcon} />
+              <Image boxSize="50px" src="/kite.png" alt="Kite" />
             </Link>
           </NextLink>
         </Flex>
