@@ -57,7 +57,7 @@ function StatsCard({ title, stat, icon }: StatsCardProps) {
       <StatLabel fontWeight={"medium"} isTruncated>
         {title}
       </StatLabel>
-      <StatNumber fontSize={"2xl"} fontWeight={"medium"}>
+      <StatNumber fontSize={"2xl"} fontWeight={"medium"} mr={8}>
         {stat}
       </StatNumber>
       <Box position="absolute" right={0} bottom={0} mr={4}>
