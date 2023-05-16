@@ -21,18 +21,18 @@ export default function Research() {
           my={8}
           color="gray.600"
         >
-          The groups of Dr Campeau (including Dr Rousseau) and Dr Fisher
-          (including Dr Snijders Blok) focused on CHD3 several years before the
+          The groups of Dr. Campeau (including Dr. Rousseau) and Dr. Fisher
+          (including Dr. Snijders Blok) focused on CHD3 several years before the
           2018 publication when they noted that rare de novo variants in this
           gene were associated with neurodevelopmental issues. They collected
           clinical and genetic information, along with samples from individuals
           with CHD3 mutations, to better understand the effects of the
           mutations. They collaborated together and eventually with CHD3 protein
-          expert Dr Paul Wade. Justine Rousseau and Sophie Ehresmann introduced
+          expert Dr. Paul Wade. Justine Rousseau and Sophie Ehresmann introduced
           mutations in a piece of DNA and the in vitro assays were performed by
-          Joanna Twist and Motoki Takaku in Dr Wade&apos;s lab (with Justine and
-          Sophie visiting them to learn the techniques). The efforts of these
-          researchers with the critical collaboration of clinicians,
+          Joanna Twist and Motoki Takaku in Dr. Wade&apos;s lab (with Justine
+          and Sophie visiting them to learn the techniques). The efforts of
+          these researchers with the critical collaboration of clinicians,
           bioinformaticians and families allowed the eventual characterization
           of the syndrome caused by impaired activity of this chromatin
           remodeler.
