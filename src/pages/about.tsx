@@ -71,6 +71,7 @@ const CelinaBio = () => {
     <BioTemplate
       name="Celina Britton"
       title="Co-founding Board Member, Vice President"
+      image="bio/celina.jpg"
       bio={
         <>
           <Text>
