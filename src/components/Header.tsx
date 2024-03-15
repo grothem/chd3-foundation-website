@@ -12,8 +12,9 @@ import {
   Stack,
   Icon,
   Spacer,
+  Center,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { CHD3Icon } from "./CHD3Icon";
 import { HeartIcon } from "@heroicons/react/24/outline";
 
@@ -36,6 +37,26 @@ const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
     href={"/" + href}
   >
     {children}
+  </Link>
+);
+
+const StoreLink = () => (
+  <Link
+    px={2}
+    py={1}
+    rounded={"md"}
+    _hover={{
+      textDecoration: "none",
+      bg: useColorModeValue("gray.200", "gray.700"),
+    }}
+    href="https://chd3-foundation-store.printify.me/products"
+    isExternal
+  >
+    <Flex>
+      <Center>
+        Store <ExternalLinkIcon mx="4px" />
+      </Center>
+    </Flex>
   </Link>
 );
 
@@ -75,6 +96,7 @@ export default function Header() {
                 {link.name}
               </NavLink>
             ))}
+            <StoreLink />
           </HStack>
         </HStack>
         {/* <Flex alignItems={"center"}>
@@ -136,6 +158,7 @@ export default function Header() {
                   {link.name}
                 </NavLink>
               ))}
+              <StoreLink />
             </Stack>
           </Flex>
         </Box>

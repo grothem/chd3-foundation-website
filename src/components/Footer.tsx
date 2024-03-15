@@ -13,7 +13,7 @@ import NextLink from "next/link";
 
 import { ReactNode } from "react";
 import { HeartIcon } from "@heroicons/react/24/outline";
-import { FaFacebook, FaPaypal } from "react-icons/fa";
+import { FaFacebook, FaPaypal, FaShoppingCart } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
   {
@@ -60,6 +60,15 @@ export const Footer = () => {
                 href="https://www.paypal.com/donate/?hosted_button_id=EPJTXCFF2LBSY"
               >
                 Pay Pal
+              </Link>
+            </Stack>
+            <Stack direction="row" align="center">
+              <FaShoppingCart />
+              <Link
+                isExternal
+                href="https://chd3-foundation-store.printify.me/products"
+              >
+                Store
               </Link>
             </Stack>
           </Stack>
