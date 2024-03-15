@@ -13,7 +13,12 @@ import NextLink from "next/link";
 
 import { ReactNode } from "react";
 import { HeartIcon } from "@heroicons/react/24/outline";
-import { FaFacebook, FaPaypal, FaShoppingCart } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaPaypal,
+  FaShoppingCart,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const SOCIAL_LINKS = [
   {
@@ -74,9 +79,12 @@ export const Footer = () => {
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Contact us</ListHeader>
-            <a href="mailto:chd3foundation@gmail.com">
-              chd3foundation@gmail.com
-            </a>
+            <Stack direction="row" align="center">
+              <FaEnvelope />
+              <a href="mailto:chd3foundation@gmail.com">
+                chd3foundation@gmail.com
+              </a>
+            </Stack>
           </Stack>
         </SimpleGrid>
       </Container>
