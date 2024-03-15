@@ -101,6 +101,7 @@ const EmilyBio = () => {
     <BioTemplate
       name="Emily Niepraschk"
       title="Co-Founding Board Member, Secretary"
+      image="bio/emily.jpg"
       bio={
         <Text>
           Emily, who has a BA in English from Brigham Young University, lives in
@@ -141,6 +142,7 @@ const GerianneBio = () => {
     <BioTemplate
       name="Gerianne Benisch"
       title="Co-Founding Board Member, Co-Treasurer"
+      image="bio/placeholder.jpg"
       bio={
         <Text>
           Gerianne lives in Illinois with Craig, her husband of 26 years. They
