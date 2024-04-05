@@ -142,7 +142,7 @@ const GerianneBio = () => {
     <BioTemplate
       name="Gerianne Benisch"
       title="Co-Founding Board Member, Co-Treasurer"
-      image="bio/placeholder.jpg"
+      image="bio/gerianne.jpg"
       bio={
         <Text>
           Gerianne lives in Illinois with Craig, her husband of 26 years. They
