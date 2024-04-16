@@ -18,6 +18,14 @@ import { HamburgerIcon, CloseIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { CHD3Icon } from "./CHD3Icon";
 import { HeartIcon } from "@heroicons/react/24/outline";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "givebutter-widget": any;
+    }
+  }
+}
+
 const Links = [
   { name: "Home", href: "" },
   { name: "About Us", href: "about" },
