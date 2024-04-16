@@ -124,23 +124,9 @@ export default function Header() {
           </Menu>
         </Flex> */}
       </Flex>
-      <Link
-        isExternal
-        href="https://www.paypal.com/donate/?hosted_button_id=EPJTXCFF2LBSY"
-      >
-        <Button
-          backgroundColor="primary"
-          color="background"
-          variant="solid"
-          _hover={{ bg: "#273166" }}
-          position="absolute"
-          right="4"
-          bottom="4"
-          rightIcon={<Icon mr={2} as={HeartIcon} />}
-        >
-          Support us
-        </Button>
-      </Link>
+      <Flex justifyContent="end" mt={3}>
+        <givebutter-widget id="gO0drp"></givebutter-widget>
+      </Flex>
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Flex justifyContent="end">

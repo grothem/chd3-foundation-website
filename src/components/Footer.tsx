@@ -12,12 +12,11 @@ import {
 import NextLink from "next/link";
 
 import { ReactNode } from "react";
-import { HeartIcon } from "@heroicons/react/24/outline";
 import {
   FaFacebook,
-  FaPaypal,
   FaShoppingCart,
   FaEnvelope,
+  FaDonate,
 } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
@@ -59,12 +58,9 @@ export const Footer = () => {
           <Stack align={"flex-start"}>
             <ListHeader>Support us</ListHeader>
             <Stack direction="row" align="center">
-              <FaPaypal />
-              <Link
-                isExternal
-                href="https://www.paypal.com/donate/?hosted_button_id=EPJTXCFF2LBSY"
-              >
-                Pay Pal
+              <FaDonate />
+              <Link isExternal href="https://givebutter.com/hCoJWE">
+                Donations
               </Link>
             </Stack>
             <Stack direction="row" align="center">
