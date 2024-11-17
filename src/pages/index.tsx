@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>CHD3 Foundation</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Script src="https://widgets.givebutter.com/latest.umd.cjs?acct=ruykNMO5qtnfw8Tv&p=other" />
       <AppLayout>
