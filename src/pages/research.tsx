@@ -198,7 +198,7 @@ export default function Research() {
             </Link>
           </ResearchPlublication>
           <Divider />
-          <ResearchPlublication
+          {/* <ResearchPlublication
             header="2021, open access"
             subText="Discusses hypersociability as a feature of Snijders Blok-Campeau Syndrome. Open manuscript available online. PDF version through patient request or purchase."
           >
@@ -214,7 +214,7 @@ export default function Research() {
             &rdquo; European Journal of Medical Genetics vol. 64,4 (2021):
             104166
           </ResearchPlublication>
-          <Divider />
+          <Divider /> */}
           <ResearchPlublication
             header="2021, open access"
             subText="Case study of a 14 month old girl from China. Note: full text is in Chinese."
