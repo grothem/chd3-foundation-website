@@ -37,23 +37,23 @@ const HeatherBio = () => {
       bio={
         <>
           <Text>
-            Heather has 25 years of experience in the finance industry and is
-            employed with INB, N.A. as Vice President, Branch Manager. Dedicated
-            to serving her community, she obtained a Nonprofit Management
-            Certificate from the University of Illinois Chicago to expand her
-            knowledge in helping to establish and operate the 501C3
-            organization, Oakwood Area Food Pantry, Inc., where she has served
-            as Executive Director and Board President since 2014.
+            Heather has 25 years of experience in the finance industry and now
+            serves as the Executive Director of a life-affirming Pregnancy
+            Resource Center in Illinois. Dedicated to serving her community, she
+            earned a Nonprofit Management Certificate from the University of
+            Illinois Chicago and helped establish a food pantry assisting seven
+            rural communities, where she has served as Executive Director and
+            Board President since 2014.
           </Text>
           <br />
           <Text>
-            Heather resides in Illinois with her husband Chip and daughter,
-            Olivia. She is also a mom to Glendon and a Mimi to his three
-            children. Her grandson Branson was diagnosed with CHD3 through gene
-            testing, just before his second birthday. She is dedicated to
-            raising awareness of this rare disorder through advocacy,
-            networking, and fundraising, in order to support further medical
-            research and disseminate information to CHD3 families and patients.
+            Heather resides in Illinois with her husband, Chip, and their
+            daughter, Olivia. She is also mom to Glendon and “Mimi” to his three
+            children. Her grandson, Branson, was diagnosed with CHD3 through
+            genetic testing just before his second birthday. Heather is
+            passionate about raising awareness of this rare disorder through
+            advocacy, networking, and fundraising to support medical research
+            and share resources with CHD3 families.
           </Text>
           <br />
           <Text>
