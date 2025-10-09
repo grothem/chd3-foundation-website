@@ -21,7 +21,7 @@ export default function Bios() {
         <AbbyBio />
         <GerianneBio />
         <ChristineBio />
-        <CourtneyBio />
+        {/* <CourtneyBio /> */}
       </VStack>
       <Footer />
     </>
