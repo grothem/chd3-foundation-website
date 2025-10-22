@@ -21,6 +21,15 @@ export default function Assistance() {
       </Head>
       <AppLayout>
         <VStack spacing={4} px={{ base: 4, md: 8, lg: 16 }} py={{ base: 6, md: 8 }}>
+          <Box>
+            <Link
+              color="primary"
+              href="https://docs.google.com/document/d/18Ib2fYblscQqXL3fv2V2OAgdLAz2uMBA/edit"
+              isExternal
+            >
+              Application guidelines
+            </Link>
+          </Box>
           <Box
             as="iframe"
             src={embedUrl}
