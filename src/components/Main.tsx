@@ -1,24 +1,19 @@
 import {
   Box,
   Heading,
-  Icon,
   SimpleGrid,
-  Stat,
-  StatLabel,
-  StatNumber,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { UserGroupIcon, UserIcon } from "@heroicons/react/24/outline";
 
 export const Main = () => {
   return (
-    <Box>
-      <VStack margin={4} p={6}>
-        <Heading fontSize="2xl">
+    <Box as="section" bgGradient={{ base: "linear(to-b, white, gray.50)", md: "linear(to-b, white, gray.50)" }} py={{ base: 8, md: 12 }}>
+      <VStack margin={4} p={6} spacing={3} textAlign="center">
+        <Heading as="h2" fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} fontWeight="extrabold" color="primary">
           What is Snijders Blok-Campeau Syndrome?
         </Heading>
-        <Text color="gray.600" maxWidth={{ base: "90vw", md: "75vw" }}>
+        <Text color="gray.600" maxWidth={{ base: "90vw", md: "75vw" }} mx="auto" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">
           Snijders Blok-Campeau Syndrome is a rare neurodevelopmental disorder
           caused by mutations in the CHD3 gene, which has an important role
           during early brain development. This gene makes a protein that is
@@ -38,53 +33,44 @@ export const Main = () => {
   );
 };
 
-interface StatsCardProps {
-  title: string;
-  stat: string;
-  icon: React.ReactNode;
+interface StatTileProps {
+  value: string;
+  label: string;
 }
 
-function StatsCard({ title, stat, icon }: StatsCardProps) {
+function StatTile({ value, label }: StatTileProps) {
   return (
-    <Stat
-      px={{ base: 4, md: 8 }}
-      py={"5"}
-      shadow={"xl"}
-      background="primary"
-      color="background"
-      rounded={"lg"}
+    <Box
+      p={{ base: 5, md: 6 }}
+      bg="background"
+      borderWidth="1px"
+      borderColor="gray.200"
+      rounded="2xl"
+      boxShadow="sm"
+      textAlign="center"
+      transition="transform 0.2s ease, box-shadow 0.2s ease"
+      _hover={{ transform: "translateY(-2px)", boxShadow: "md" }}
     >
-      <StatLabel fontWeight={"medium"} isTruncated>
-        {title}
-      </StatLabel>
-      <StatNumber fontSize={"2xl"} fontWeight={"medium"} mr={8}>
-        {stat}
-      </StatNumber>
-      <Box position="absolute" right={0} bottom={0} mr={4}>
-        {icon}
-      </Box>
-    </Stat>
+      <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="extrabold" color="primary" lineHeight="1">
+        {value}
+      </Text>
+      <Text mt={2} fontSize={{ base: "sm", md: "md" }} color="gray.600">
+        {label}
+      </Text>
+    </Box>
   );
 }
 
 export default function Statistics() {
   return (
-    <Box mb={8} px={{ base: 8, md: 24, lg: 32 }} pt={5}>
+    <Box mb={8} px={{ base: 8, md: 24, lg: 32 }} pt={5} maxW={{ base: "container.md", lg: "container.xl" }} mx="auto">
       <SimpleGrid
         alignContent={"center"}
-        columns={{ base: 1, lg: 2 }}
-        spacing={{ base: 5, lg: 8 }}
+        columns={{ base: 1, md: 2 }}
+        spacing={{ base: 4, lg: 6 }}
       >
-        <StatsCard
-          title={"Approximately"}
-          stat={"170 known cases"}
-          icon={<Icon boxSize={{ base: 6, md: 8 }} mb={2} as={UserIcon} />}
-        />
-        <StatsCard
-          title={"And"}
-          stat={"430 support group members"}
-          icon={<Icon boxSize={{ base: 6, md: 8 }} mb={2} as={UserGroupIcon} />}
-        />
+        <StatTile value={"237"} label={"Known cases (approx.)"} />
+        <StatTile value={"787"} label={"Support group members"} />
       </SimpleGrid>
     </Box>
   );
