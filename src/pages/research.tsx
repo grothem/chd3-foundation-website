@@ -84,39 +84,6 @@ export default function Research() {
             </Text>
           </Text>
         </VStack>
-        <VStack my={4} mx={{ base: 4, md: 10 }}>
-          <Heading fontSize="xl">For Families</Heading>
-          <Text align="center">
-            <Text>
-              We are conducting neurodevelopmental questionnaires with parents
-              here:{" "}
-              <Link
-                color="primary"
-                isExternal
-                href="https://is.gd/neurodevelopmentalstudy"
-              >
-                https://is.gd/neurodevelopmentalstudy
-              </Link>
-            </Text>
-            <br />
-            <Text>
-              Abnormal pain sensitivity questionnaire study with Kimberly Lobo (
-              <a href="mailto:Kimberly.Lobo@childrens.harvard.edu">
-                Kimberly.Lobo@childrens.harvard.edu
-              </a>
-              )
-            </Text>
-            <br />
-            <Text>
-              EEGs with auditory stimulation and high-resolution MRIs if the
-              family can cover their travel to Montreal (
-              <a href="mailto:khadije.jizi.hsj@ssss.gouv.qc.ca">
-                khadije.jizi.hsj@ssss.gouv.qc.ca
-              </a>
-              ).
-            </Text>
-          </Text>
-        </VStack>
         <VStack
           mt={4}
           mb={20}
