@@ -387,8 +387,8 @@ export default function Dev() {
           {/* Alerts */}
           <Section title="Alerts & Banners">
             <div className="space-y-3">
-              <Alert variant="info">New research published: "CHD3 variants and neurodevelopmental outcomes" — view the paper →</Alert>
-              <Alert variant="success">Your assistance application has been received. We'll follow up within 5 business days.</Alert>
+              <Alert variant="info">New research published: &ldquo;CHD3 variants and neurodevelopmental outcomes&rdquo; — view the paper →</Alert>
+              <Alert variant="success">Your assistance application has been received. We&apos;ll follow up within 5 business days.</Alert>
               <Alert variant="warning">Applications for the 2024 grant cycle close on December 15th.</Alert>
             </div>
           </Section>
