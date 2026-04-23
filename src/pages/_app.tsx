@@ -1,21 +1,17 @@
 import "@/styles/globals.css";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
+import { Poppins } from "next/font/google";
 
-const customTheme = extendTheme({
-  colors: {
-    primary: "#5C6BC0", // lighter shade of blue
-    secondary: "#FFC107", // warm shade of yellow
-    background: "#E0E0E0", // medium-light gray
-    backgroundLight: "#F5F5F5", // light gray
-    backgroundDark: "#CCCCCC", // medium-dark gray
-  },
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={customTheme}>
+    <div className={`${poppins.variable} font-sans`}>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </div>
   );
 }

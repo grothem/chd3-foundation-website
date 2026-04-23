@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHD3 Foundation — Palette Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 48px;
+    }
+
+    .palette-section {
+      max-width: 960px;
+      margin: 0 auto 72px;
+    }
+
+    .palette-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .palette-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #eee;
+      margin-bottom: 6px;
+    }
+
+    .palette-desc {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    /* Swatches */
+    .swatches {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch-block {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .swatch-name {
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Mock page frame */
+    .mock-page {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+
+    /* ── PALETTE 1: Teal & Amber ──────────────────────────── */
+    .p1 {
+      --bg: #FAFAF8;
+      --bg2: #F0FDFA;
+      --primary: #0D9488;
+      --primary-dark: #0F766E;
+      --primary-light: #CCFBF1;
+      --accent: #F59E0B;
+      --accent-light: #FEF3C7;
+      --text: #134E4A;
+      --text-muted: #6B7280;
+      --card: #FFFFFF;
+      --nav-bg: #FFFFFF;
+      --hero-bg: #F0FDFA;
+      --divider: #E5E7EB;
+    }
+
+    /* ── PALETTE 2: Violet & Peach ────────────────────────── */
+    .p2 {
+      --bg: #FDFCFF;
+      --bg2: #F5F3FF;
+      --primary: #7C3AED;
+      --primary-dark: #6D28D9;
+      --primary-light: #EDE9FE;
+      --accent: #FB923C;
+      --accent-light: #FFF7ED;
+      --text: #2D1B69;
+      --text-muted: #6B7280;
+      --card: #FFFFFF;
+      --nav-bg: #FFFFFF;
+      --hero-bg: #F5F3FF;
+      --divider: #E5E7EB;
+    }
+
+    /* ── PALETTE 3: Rose & Slate ──────────────────────────── */
+    .p3 {
+      --bg: #FFFBF9;
+      --bg2: #FFF1F2;
+      --primary: #E11D48;
+      --primary-dark: #BE123C;
+      --primary-light: #FFE4E6;
+      --accent: #0EA5E9;
+      --accent-light: #E0F2FE;
+      --text: #1C0A00;
+      --text-muted: #6B7280;
+      --card: #FFFFFF;
+      --nav-bg: #FFFFFF;
+      --hero-bg: #FFF1F2;
+      --divider: #E5E7EB;
+    }
+
+    /* ── Shared mock styles ───────────────────────────────── */
+    .mock-nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--divider);
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mock-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mock-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mock-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .mock-nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .mock-nav-links li {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .mock-nav-links li.active {
+      color: var(--primary);
+    }
+
+    .mock-nav-cta {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .mock-hero {
+      background: var(--hero-bg);
+      padding: 64px 40px 56px;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .mock-hero-text {
+      flex: 1;
+    }
+
+    .mock-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .mock-hero-badge span {
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .mock-hero h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .mock-hero h2 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .mock-hero p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+
+    .mock-hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    /* Stats */
+    .mock-stats {
+      background: var(--card);
+      border: 1px solid var(--divider);
+      border-radius: 16px;
+      padding: 28px 24px;
+      min-width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .stat-divider {
+      height: 1px;
+      background: var(--divider);
+    }
+
+    /* Cards section */
+    .mock-cards-section {
+      background: var(--bg);
+      padding: 40px 40px;
+    }
+
+    .mock-section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .mock-section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .mock-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .mock-card {
+      background: var(--card);
+      border: 1px solid var(--divider);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mock-card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mock-card-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+    }
+
+    .mock-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .mock-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .mock-card-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    /* CTA banner */
+    .mock-cta {
+      background: var(--primary);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .mock-cta-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .mock-cta-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .mock-cta-btn {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* accent pill */
+    .accent-pill {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+
+    hr.section-break {
+      border: none;
+      border-top: 1px solid #2a2a2a;
+      margin: 72px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">CHD3 Foundation — Palette Directions</h1>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- PALETTE 1 -->
+  <!-- ────────────────────────────────────────────── -->
+  <div class="palette-section">
+    <div class="palette-label">Option 1</div>
+    <div class="palette-name">Teal &amp; Amber</div>
+    <div class="palette-desc">Calm, hopeful, trustworthy. Teal reads as health + community; amber pulls from the logo's yellow and warms it up.</div>
+
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#0D9488"></div><div class="swatch-name">Primary<br>#0D9488</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#CCFBF1"></div><div class="swatch-name">Primary Lt<br>#CCFBF1</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#F59E0B"></div><div class="swatch-name">Accent<br>#F59E0B</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FEF3C7"></div><div class="swatch-name">Accent Lt<br>#FEF3C7</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#134E4A"></div><div class="swatch-name">Text<br>#134E4A</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FAFAF8"></div><div class="swatch-name">Background<br>#FAFAF8</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFFFFF; border:1px solid #ddd"></div><div class="swatch-name">Card<br>#FFFFFF</div></div>
+    </div>
+
+    <div class="mock-page p1">
+      <!-- Nav -->
+      <nav class="mock-nav">
+        <div class="mock-logo">
+          <div class="mock-logo-icon">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2L4 9l8 13 8-13-8-7z" fill="white"/></svg>
+          </div>
+          <span class="mock-logo-text">CHD3 Foundation</span>
+        </div>
+        <ul class="mock-nav-links">
+          <li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li>
+        </ul>
+        <button class="mock-nav-cta">Donate</button>
+      </nav>
+
+      <!-- Hero -->
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <div class="mock-hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not<br />alone in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <div class="mock-hero-actions">
+            <button class="btn-primary">Join Our Community</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-stats">
+          <div class="stat-item">
+            <div class="stat-number">237</div>
+            <div class="stat-label">Diagnosed cases worldwide</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">787</div>
+            <div class="stat-label">Support group members</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Published research papers</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="mock-cards-section">
+        <div class="mock-section-label">How we help</div>
+        <div class="mock-section-title">Resources for families &amp; caregivers</div>
+        <div class="mock-cards">
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h4>Community Support</h4>
+            <p>Connect with other families navigating CHD3 diagnoses around the world.</p>
+            <div class="mock-card-link">Join the group →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h4>Financial Assistance</h4>
+            <p>Apply for grants and assistance programs designed for affected families.</p>
+            <div class="mock-card-link">Apply now →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h4>Research Updates</h4>
+            <p>Stay current with the latest published research on CHD3 and related conditions.</p>
+            <div class="mock-card-link">View research →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA banner -->
+      <div class="mock-cta">
+        <div class="mock-cta-text">
+          <h3>Ready to connect with others?</h3>
+          <p>Our community is here for every step of the journey — diagnosis, treatment, and beyond.</p>
+        </div>
+        <button class="mock-cta-btn">Join Today</button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-break" />
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- PALETTE 2 -->
+  <!-- ────────────────────────────────────────────── -->
+  <div class="palette-section">
+    <div class="palette-label">Option 2</div>
+    <div class="palette-name">Violet &amp; Peach</div>
+    <div class="palette-desc">Vibrant, modern, community-forward. Violet is closer to the logo's indigo but brighter and more energetic; peach brings warmth and approachability.</div>
+
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#7C3AED"></div><div class="swatch-name">Primary<br>#7C3AED</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#EDE9FE"></div><div class="swatch-name">Primary Lt<br>#EDE9FE</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FB923C"></div><div class="swatch-name">Accent<br>#FB923C</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFF7ED"></div><div class="swatch-name">Accent Lt<br>#FFF7ED</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#2D1B69"></div><div class="swatch-name">Text<br>#2D1B69</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FDFCFF"></div><div class="swatch-name">Background<br>#FDFCFF</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFFFFF; border:1px solid #ddd"></div><div class="swatch-name">Card<br>#FFFFFF</div></div>
+    </div>
+
+    <div class="mock-page p2">
+      <nav class="mock-nav">
+        <div class="mock-logo">
+          <div class="mock-logo-icon">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2L4 9l8 13 8-13-8-7z" fill="white"/></svg>
+          </div>
+          <span class="mock-logo-text">CHD3 Foundation</span>
+        </div>
+        <ul class="mock-nav-links">
+          <li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li>
+        </ul>
+        <button class="mock-nav-cta">Donate</button>
+      </nav>
+
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <div class="mock-hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not<br />alone in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <div class="mock-hero-actions">
+            <button class="btn-primary">Join Our Community</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-stats">
+          <div class="stat-item">
+            <div class="stat-number">237</div>
+            <div class="stat-label">Diagnosed cases worldwide</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">787</div>
+            <div class="stat-label">Support group members</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Published research papers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-cards-section">
+        <div class="mock-section-label">How we help</div>
+        <div class="mock-section-title">Resources for families &amp; caregivers</div>
+        <div class="mock-cards">
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h4>Community Support</h4>
+            <p>Connect with other families navigating CHD3 diagnoses around the world.</p>
+            <div class="mock-card-link">Join the group →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h4>Financial Assistance</h4>
+            <p>Apply for grants and assistance programs designed for affected families.</p>
+            <div class="mock-card-link">Apply now →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h4>Research Updates</h4>
+            <p>Stay current with the latest published research on CHD3 and related conditions.</p>
+            <div class="mock-card-link">View research →</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-cta">
+        <div class="mock-cta-text">
+          <h3>Ready to connect with others?</h3>
+          <p>Our community is here for every step of the journey — diagnosis, treatment, and beyond.</p>
+        </div>
+        <button class="mock-cta-btn">Join Today</button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-break" />
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- PALETTE 3 -->
+  <!-- ────────────────────────────────────────────── -->
+  <div class="palette-section">
+    <div class="palette-label">Option 3</div>
+    <div class="palette-name">Rose &amp; Sky</div>
+    <div class="palette-desc">Warm, caring, human. Rose signals love and advocacy; sky blue provides calm and balance. The most emotionally warm of the three.</div>
+
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#E11D48"></div><div class="swatch-name">Primary<br>#E11D48</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFE4E6"></div><div class="swatch-name">Primary Lt<br>#FFE4E6</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#0EA5E9"></div><div class="swatch-name">Accent<br>#0EA5E9</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#E0F2FE"></div><div class="swatch-name">Accent Lt<br>#E0F2FE</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#1C0A00"></div><div class="swatch-name">Text<br>#1C0A00</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFFBF9"></div><div class="swatch-name">Background<br>#FFFBF9</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFFFFF; border:1px solid #ddd"></div><div class="swatch-name">Card<br>#FFFFFF</div></div>
+    </div>
+
+    <div class="mock-page p3">
+      <nav class="mock-nav">
+        <div class="mock-logo">
+          <div class="mock-logo-icon">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2L4 9l8 13 8-13-8-7z" fill="white"/></svg>
+          </div>
+          <span class="mock-logo-text">CHD3 Foundation</span>
+        </div>
+        <ul class="mock-nav-links">
+          <li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li>
+        </ul>
+        <button class="mock-nav-cta">Donate</button>
+      </nav>
+
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <div class="mock-hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not<br />alone in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <div class="mock-hero-actions">
+            <button class="btn-primary">Join Our Community</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-stats">
+          <div class="stat-item">
+            <div class="stat-number">237</div>
+            <div class="stat-label">Diagnosed cases worldwide</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">787</div>
+            <div class="stat-label">Support group members</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Published research papers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-cards-section">
+        <div class="mock-section-label">How we help</div>
+        <div class="mock-section-title">Resources for families &amp; caregivers</div>
+        <div class="mock-cards">
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h4>Community Support</h4>
+            <p>Connect with other families navigating CHD3 diagnoses around the world.</p>
+            <div class="mock-card-link">Join the group →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h4>Financial Assistance</h4>
+            <p>Apply for grants and assistance programs designed for affected families.</p>
+            <div class="mock-card-link">Apply now →</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h4>Research Updates</h4>
+            <p>Stay current with the latest published research on CHD3 and related conditions.</p>
+            <div class="mock-card-link">View research →</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-cta">
+        <div class="mock-cta-text">
+          <h3>Ready to connect with others?</h3>
+          <p>Our community is here for every step of the journey — diagnosis, treatment, and beyond.</p>
+        </div>
+        <button class="mock-cta-btn">Join Today</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

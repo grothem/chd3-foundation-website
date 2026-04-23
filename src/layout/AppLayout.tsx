@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
-
-import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
-import { Box, Flex, Spacer } from "@chakra-ui/react";
+import { Footer } from "@/components/Footer";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -10,18 +8,10 @@ interface AppLayoutProps {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <Flex
-      flexDirection="column"
-      justifyContent="space-between"
-      minHeight="100vh"
-      background="backgroundLight"
-    >
+    <div className="flex flex-col min-h-screen bg-bg">
       <Header />
-      {children}
-      <Spacer />
-      <Box>
-        <Footer />
-      </Box>
-    </Flex>
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
   );
 };

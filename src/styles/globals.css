@@ -1,3 +1,9 @@
-body {
-  background-color: var(--chakra-colors-backgroundLight);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
