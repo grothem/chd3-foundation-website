@@ -1,117 +1,104 @@
-import {
-  Container,
-  Box,
-  Image,
-  Stack,
-  Text,
-  Link,
-  SimpleGrid,
-  useColorModeValue,
-  Flex,
-} from "@chakra-ui/react";
 import NextLink from "next/link";
-
-import { ReactNode } from "react";
+import Image from "next/image";
 import {
-  FaFacebook,
-  FaShoppingCart,
-  FaEnvelope,
-  FaDonate,
-} from "react-icons/fa";
+  EnvelopeIcon,
+  ShoppingBagIcon,
+  HeartIcon,
+} from "@heroicons/react/24/outline";
 
 const SOCIAL_LINKS = [
-  {
-    label: "CHD3 Foundation",
-    href: "https://www.facebook.com/profile.php?id=100090494154041",
-  },
-  {
-    label: "Family Support Group",
-    href: "https://www.facebook.com/groups/1742254126095885",
-  },
+  { label: "CHD3 Foundation", href: "https://www.facebook.com/profile.php?id=100090494154041" },
+  { label: "Family Support Group", href: "https://www.facebook.com/groups/1742254126095885" },
 ];
 
-const ListHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-      {children}
-    </Text>
-  );
-};
+const FacebookIcon = () => (
+  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
 
 export const Footer = () => {
   return (
-    <Box bg="backgroundDark" color={useColorModeValue("gray.700", "gray.200")}>
-      <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={"flex-start"}>
-            <ListHeader>Social</ListHeader>
-            {SOCIAL_LINKS.map((link) => (
-              <Stack key={link.label} direction="row" align="center">
-                <FaFacebook />
-                <Link href={link.href} isExternal>
-                  {link.label}
-                </Link>
-              </Stack>
-            ))}
-          </Stack>
+    <footer className="bg-neutral-100 border-t border-border">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
-          <Stack align={"flex-start"}>
-            <ListHeader>Support us</ListHeader>
-            <Stack direction="row" align="center">
-              <FaDonate />
-              <Link isExternal href="https://givebutter.com/hCoJWE">
-                Donations
-              </Link>
-            </Stack>
-            <Stack direction="row" align="center">
-              <FaShoppingCart />
-              <Link
-                isExternal
-                href="https://chd3-foundation-store.printify.me/products"
-              >
-                Store
-              </Link>
-            </Stack>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Contact us</ListHeader>
-            <Stack direction="row" align="center">
-              <FaEnvelope />
-              <a href="mailto:chd3foundation@gmail.com">
-                chd3foundation@gmail.com
-              </a>
-            </Stack>
-          </Stack>
-        </SimpleGrid>
-      </Container>
-      <Box pb={10}>
-        <Flex
-          align={"center"}
-          _before={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            ml: 8,
-          }}
-        >
-          <NextLink href={"/"} passHref>
-            <Link>
-              <Image boxSize="50px" src="/kite.png" alt="Kite" />
-            </Link>
+          {/* Social */}
+          <div>
+            <h3 className="text-sm font-semibold text-text mb-4">Community</h3>
+            <ul className="space-y-3">
+              {SOCIAL_LINKS.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-sm text-text-muted hover:text-primary transition-colors"
+                  >
+                    <FacebookIcon />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="text-sm font-semibold text-text mb-4">Support Us</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://givebutter.com/hCoJWE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-sm text-text-muted hover:text-primary transition-colors"
+                >
+                  <HeartIcon className="w-4 h-4 shrink-0" />
+                  Donate
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://chd3-foundation-store.printify.me/products"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-sm text-text-muted hover:text-primary transition-colors"
+                >
+                  <ShoppingBagIcon className="w-4 h-4 shrink-0" />
+                  Store
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-semibold text-text mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:chd3foundation@gmail.com"
+                  className="flex items-center gap-2.5 text-sm text-text-muted hover:text-primary transition-colors"
+                >
+                  <EnvelopeIcon className="w-4 h-4 shrink-0" />
+                  chd3foundation@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-border flex flex-col items-center gap-4">
+          <NextLink href="/">
+            <Image src="/kite.png" alt="CHD3 Foundation" width={36} height={36} className="opacity-60 hover:opacity-100 transition-opacity" />
           </NextLink>
-        </Flex>
-        <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          Created by the CHD3 Foundation
-        </Text>
-      </Box>
-    </Box>
+          <p className="text-xs text-neutral-400">
+            © {new Date().getFullYear()} CHD3 Foundation · All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 };

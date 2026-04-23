@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHD3 Logo + Palette Compatibility</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #111; color: #fff; padding: 40px 24px; }
+
+    h1.page-title {
+      text-align: center; font-size: 13px; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; color: #666; margin-bottom: 8px;
+    }
+    .page-sub {
+      text-align: center; font-size: 13px; color: #555; margin-bottom: 56px;
+    }
+
+    .section { max-width: 900px; margin: 0 auto 64px; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #444; margin-bottom: 10px; }
+    .section-title { font-size: 20px; font-weight: 700; color: #ddd; margin-bottom: 6px; }
+    .section-desc { font-size: 13px; color: #666; margin-bottom: 24px; line-height: 1.6; }
+
+    .frame {
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ── NAV BARS ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 36px; height: 68px;
+      border-bottom: 1px solid var(--divider);
+      background: var(--nav-bg);
+    }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links li { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+    .nav-links li.active { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: #fff; border: none;
+      border-radius: 8px; padding: 8px 18px; font-size: 13px;
+      font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer;
+    }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: var(--hero-bg);
+      padding: 48px 36px;
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .hero-text { flex: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-light); color: var(--primary);
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 4px 12px;
+      border-radius: 100px; margin-bottom: 16px;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
+    .hero-text h2 { font-size: 30px; font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 12px; }
+    .hero-text h2 em { font-style: normal; color: var(--primary); }
+    .hero-text p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; max-width: 380px; }
+    .hero-btn {
+      background: var(--primary); color: #fff; border: none;
+      border-radius: 10px; padding: 12px 22px; font-size: 14px;
+      font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer;
+    }
+
+    .stat-card {
+      background: var(--card); border: 1px solid var(--divider);
+      border-radius: 14px; padding: 24px; min-width: 200px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .stat-item {}
+    .stat-num { font-size: 28px; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 3px; }
+    .stat-lbl { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+    .stat-div { height: 1px; background: var(--divider); }
+
+    hr.break { border: none; border-top: 1px solid #222; max-width: 900px; margin: 0 auto 64px; }
+
+    /* VARIANT A — pure teal */
+    .va {
+      --nav-bg: #ffffff;
+      --hero-bg: #F0FDFA;
+      --primary: #0D9488;
+      --primary-light: #CCFBF1;
+      --primary-dark: #0F766E;
+      --accent: #F59E0B;
+      --text: #134E4A;
+      --text-muted: #6B7280;
+      --card: #ffffff;
+      --divider: #E5E7EB;
+    }
+
+    /* VARIANT B — teal shifted blue to bridge indigo */
+    .vb {
+      --nav-bg: #ffffff;
+      --hero-bg: #EFF6FF;
+      --primary: #2563EB;
+      --primary-light: #DBEAFE;
+      --primary-dark: #1D4ED8;
+      --accent: #F59E0B;
+      --text: #1E3A5F;
+      --text-muted: #6B7280;
+      --card: #ffffff;
+      --divider: #E5E7EB;
+    }
+
+    /* VARIANT C — use logo indigo AS the primary */
+    .vc {
+      --nav-bg: #ffffff;
+      --hero-bg: #EEF2FF;
+      --primary: #3F51B5;
+      --primary-light: #E8EAF6;
+      --primary-dark: #303F9F;
+      --accent: #F59E0B;
+      --text: #1a1f5e;
+      --text-muted: #6B7280;
+      --card: #ffffff;
+      --divider: #E5E7EB;
+    }
+
+    .verdict {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #1a1a1a; border: 1px solid #2a2a2a;
+      border-radius: 10px; padding: 16px 20px; margin-top: 16px;
+    }
+    .verdict-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .verdict-body { font-size: 13px; color: #aaa; line-height: 1.6; }
+    .verdict-body strong { color: #eee; }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Logo Compatibility Check</h1>
+  <p class="page-sub">Logo is fixed: indigo kite (#3F51B5) + yellow text (#FFEC3C). Testing three UI color approaches against it.</p>
+
+  <!-- ── VARIANT A: Pure Teal ── -->
+  <div class="section">
+    <div class="section-label">Variant A</div>
+    <div class="section-title">Teal primary — as proposed</div>
+    <div class="section-desc">
+      Teal (#0D9488) is a blue-green. The logo's indigo (#3F51B5) is a blue-purple. They share blue as a common ancestor but pull in opposite directions. See how the nav feels.
+    </div>
+
+    <div class="frame va">
+      <nav class="nav">
+        <svg viewBox="0 0 500 250" width="180" height="90" style="display:block">
+          <path d="M57.473 137.789V146.33C57.473 161.437 50.352 168.986 36.117 168.986H24.603C10.365 168.986 3.247 161.437 3.247 146.33V58.307C3.247 43.203 10.365 35.651 24.603 35.651H36.117C50.352 35.651 57.473 43.204 57.473 58.307V73.349H39.645V59.607C39.645 54.407 36.981 51.807 31.66 51.807H28.132C23.426 51.807 21.075 54.407 21.075 59.607V145.031C21.075 150.23 23.425 152.83 28.132 152.83H32.589C37.293 152.83 39.646 150.23 39.646 145.031V137.789H57.473Z" fill="#FFEC3C"/>
+          <path d="M111.142 168.986V108.446H89.229V168.986H71.401V35.651H89.229V92.291H111.142V35.651H128.97V168.986H111.142Z" fill="#FFEC3C"/>
+          <path d="M145.682 168.986V35.651H176.695C193.408 35.651 201.765 44.193 201.765 61.278V149.674C201.765 162.551 194.645 168.987 180.409 168.987H145.682V168.986ZM163.51 152.83H176.881C181.585 152.83 183.938 150.851 183.938 146.889V61.464C183.938 55.028 181.274 51.808 175.952 51.808H163.51V152.83Z" fill="#FFEC3C"/>
+          <path d="M257.103 100.461C266.388 102.94 271.031 108.571 271.031 117.36V146.329C271.031 161.436 263.91 168.985 249.675 168.985H237.605C223.367 168.985 216.248 161.436 216.248 146.329V137.788H234.076V145.03C234.076 150.229 236.426 152.829 241.133 152.829H245.218C250.54 152.829 253.203 150.229 253.203 145.03V117.545C253.203 111.728 249.736 108.817 242.804 108.817H237.976V93.774H240.576C247.509 93.774 250.975 90.867 250.975 85.046V59.79C250.975 54.59 248.312 51.99 242.99 51.99H240.576C235.87 51.99 233.519 54.59 233.519 59.79V73.347H215.692V58.491C215.692 43.263 222.809 35.649 237.047 35.649H247.446C261.681 35.649 268.802 43.263 268.802 58.491V85.047C268.803 93.469 264.903 98.605 257.103 100.461Z" fill="#FFEC3C"/>
+          <path d="M349.545 33.249C349.545 33.249 325.793 58.914 316.782 67.923L353.095 70.926L350.637 40.621" fill="#3F51B5"/>
+          <path d="M355.552 72.564L391.318 75.567C391.318 75.567 380.397 111.334 345.177 153.652C345.177 153.652 350.91 105.6 354.459 74.202" fill="#3F51B5"/>
+          <path d="M347.088 3.48999C347.088 3.48999 366.746 101.232 335.621 176.586C335.621 176.586 339.443 180.408 324.701 182.045C309.958 183.684 298.49 171.672 286.476 181.5C286.476 181.5 281.016 193.512 302.858 195.152C324.701 196.789 363.469 183.138 372.206 197.334C372.206 197.334 378.759 205.527 366.2 207.711C353.64 209.895 324.701 198.428 327.976 236.106" stroke="black" stroke-width="5.4604" stroke-miterlimit="10" stroke-linecap="round"/>
+          <path d="M353.095 33.795C353.095 33.795 374.937 52.361 391.045 72.837L354.734 70.653" fill="#FFEC3C"/>
+          <path d="M313.78 71.745C313.78 71.745 335.075 119.797 341.628 151.74C341.628 151.74 352.003 118.978 351.457 74.475" fill="#FFEC3C"/>
+          <path d="M349.818 23.693C349.818 23.693 337.259 40.075 306.681 69.562C306.681 69.562 333.437 129.081 338.351 169.487C338.351 169.487 383.672 119.798 398.415 77.207C398.415 77.207 380.396 52.088 349.818 23.693Z" stroke="black" stroke-width="5.4604" stroke-miterlimit="10"/>
+          <path d="M327.843 222.277C327.843 222.277 311.795 206.638 307.932 208.47C307.932 208.47 306.846 208.173 306.497 211.714C306.147 215.257 305.804 218.525 305.804 218.525L304.707 218.775L305.491 220.431C305.491 220.431 302.607 227.47 302.038 228.548C301.469 229.63 301.387 233.45 312.103 230.403C322.82 227.358 325.317 225.501 326.93 226.626C328.545 227.755 340.017 240.29 344.107 240.651C348.195 241.014 347.463 236.901 347.488 235.809C347.51 234.717 348.163 229.815 348.163 229.815L350.098 228.766L349.047 226.83C349.047 226.83 353.027 219.543 353.046 218.723C353.063 217.905 352.861 214.623 345.722 216.381C338.582 218.141 327.843 222.277 327.843 222.277Z" fill="#3F51B5"/>
+        </svg>
+        <ul class="nav-links"><li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li></ul>
+        <button class="nav-cta">Donate</button>
+      </nav>
+      <div class="hero-strip">
+        <div class="hero-text">
+          <div class="hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not alone<br />in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <button class="hero-btn">Join Our Community</button>
+        </div>
+        <div class="stat-card">
+          <div class="stat-item"><div class="stat-num">237</div><div class="stat-lbl">Diagnosed cases worldwide</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">787</div><div class="stat-lbl">Support group members</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">7</div><div class="stat-lbl">Published research papers</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="verdict-icon">⚠️</div>
+      <div class="verdict-body"><strong>Verdict: slight tension.</strong> The logo's indigo and the teal button don't clash badly, but they're pulling in different directions — indigo goes purple-blue, teal goes green-blue. They coexist but don't feel intentional together. The yellow logo text vs amber accent works very well though.</div>
+    </div>
+  </div>
+
+  <hr class="break" />
+
+  <!-- ── VARIANT B: Blue Bridge ── -->
+  <div class="section">
+    <div class="section-label">Variant B</div>
+    <div class="section-title">Blue as the bridge</div>
+    <div class="section-desc">
+      Shift the UI primary to a clean blue (#2563EB). Blue sits between indigo and teal — it harmonizes with the logo's indigo without repeating it exactly. Still warm-background, still amber accent.
+    </div>
+
+    <div class="frame vb">
+      <nav class="nav">
+        <svg viewBox="0 0 500 250" width="180" height="90" style="display:block">
+          <path d="M57.473 137.789V146.33C57.473 161.437 50.352 168.986 36.117 168.986H24.603C10.365 168.986 3.247 161.437 3.247 146.33V58.307C3.247 43.203 10.365 35.651 24.603 35.651H36.117C50.352 35.651 57.473 43.204 57.473 58.307V73.349H39.645V59.607C39.645 54.407 36.981 51.807 31.66 51.807H28.132C23.426 51.807 21.075 54.407 21.075 59.607V145.031C21.075 150.23 23.425 152.83 28.132 152.83H32.589C37.293 152.83 39.646 150.23 39.646 145.031V137.789H57.473Z" fill="#FFEC3C"/>
+          <path d="M111.142 168.986V108.446H89.229V168.986H71.401V35.651H89.229V92.291H111.142V35.651H128.97V168.986H111.142Z" fill="#FFEC3C"/>
+          <path d="M145.682 168.986V35.651H176.695C193.408 35.651 201.765 44.193 201.765 61.278V149.674C201.765 162.551 194.645 168.987 180.409 168.987H145.682V168.986ZM163.51 152.83H176.881C181.585 152.83 183.938 150.851 183.938 146.889V61.464C183.938 55.028 181.274 51.808 175.952 51.808H163.51V152.83Z" fill="#FFEC3C"/>
+          <path d="M257.103 100.461C266.388 102.94 271.031 108.571 271.031 117.36V146.329C271.031 161.436 263.91 168.985 249.675 168.985H237.605C223.367 168.985 216.248 161.436 216.248 146.329V137.788H234.076V145.03C234.076 150.229 236.426 152.829 241.133 152.829H245.218C250.54 152.829 253.203 150.229 253.203 145.03V117.545C253.203 111.728 249.736 108.817 242.804 108.817H237.976V93.774H240.576C247.509 93.774 250.975 90.867 250.975 85.046V59.79C250.975 54.59 248.312 51.99 242.99 51.99H240.576C235.87 51.99 233.519 54.59 233.519 59.79V73.347H215.692V58.491C215.692 43.263 222.809 35.649 237.047 35.649H247.446C261.681 35.649 268.802 43.263 268.802 58.491V85.047C268.803 93.469 264.903 98.605 257.103 100.461Z" fill="#FFEC3C"/>
+          <path d="M349.545 33.249C349.545 33.249 325.793 58.914 316.782 67.923L353.095 70.926L350.637 40.621" fill="#3F51B5"/>
+          <path d="M355.552 72.564L391.318 75.567C391.318 75.567 380.397 111.334 345.177 153.652C345.177 153.652 350.91 105.6 354.459 74.202" fill="#3F51B5"/>
+          <path d="M347.088 3.48999C347.088 3.48999 366.746 101.232 335.621 176.586C335.621 176.586 339.443 180.408 324.701 182.045C309.958 183.684 298.49 171.672 286.476 181.5C286.476 181.5 281.016 193.512 302.858 195.152C324.701 196.789 363.469 183.138 372.206 197.334C372.206 197.334 378.759 205.527 366.2 207.711C353.64 209.895 324.701 198.428 327.976 236.106" stroke="black" stroke-width="5.4604" stroke-miterlimit="10" stroke-linecap="round"/>
+          <path d="M353.095 33.795C353.095 33.795 374.937 52.361 391.045 72.837L354.734 70.653" fill="#FFEC3C"/>
+          <path d="M313.78 71.745C313.78 71.745 335.075 119.797 341.628 151.74C341.628 151.74 352.003 118.978 351.457 74.475" fill="#FFEC3C"/>
+          <path d="M349.818 23.693C349.818 23.693 337.259 40.075 306.681 69.562C306.681 69.562 333.437 129.081 338.351 169.487C338.351 169.487 383.672 119.798 398.415 77.207C398.415 77.207 380.396 52.088 349.818 23.693Z" stroke="black" stroke-width="5.4604" stroke-miterlimit="10"/>
+          <path d="M327.843 222.277C327.843 222.277 311.795 206.638 307.932 208.47C307.932 208.47 306.846 208.173 306.497 211.714C306.147 215.257 305.804 218.525 305.804 218.525L304.707 218.775L305.491 220.431C305.491 220.431 302.607 227.47 302.038 228.548C301.469 229.63 301.387 233.45 312.103 230.403C322.82 227.358 325.317 225.501 326.93 226.626C328.545 227.755 340.017 240.29 344.107 240.651C348.195 241.014 347.463 236.901 347.488 235.809C347.51 234.717 348.163 229.815 348.163 229.815L350.098 228.766L349.047 226.83C349.047 226.83 353.027 219.543 353.046 218.723C353.063 217.905 352.861 214.623 345.722 216.381C338.582 218.141 327.843 222.277 327.843 222.277Z" fill="#3F51B5"/>
+        </svg>
+        <ul class="nav-links"><li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li></ul>
+        <button class="nav-cta">Donate</button>
+      </nav>
+      <div class="hero-strip">
+        <div class="hero-text">
+          <div class="hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not alone<br />in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <button class="hero-btn">Join Our Community</button>
+        </div>
+        <div class="stat-card">
+          <div class="stat-item"><div class="stat-num">237</div><div class="stat-lbl">Diagnosed cases worldwide</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">787</div><div class="stat-lbl">Support group members</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">7</div><div class="stat-lbl">Published research papers</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="verdict-icon">✅</div>
+      <div class="verdict-body"><strong>Verdict: harmonious.</strong> Blue (#2563EB) bridges the gap — it's clearly related to the logo's indigo without being identical. The logo looks intentional next to the UI. Still pairs with the amber accent. Slightly less distinctive than teal but much more cohesive.</div>
+    </div>
+  </div>
+
+  <hr class="break" />
+
+  <!-- ── VARIANT C: Embrace the Indigo ── -->
+  <div class="section">
+    <div class="section-label">Variant C</div>
+    <div class="section-title">Embrace the logo indigo</div>
+    <div class="section-desc">
+      Use the logo's own indigo (#3F51B5) as the UI primary. The logo disappears into the design in a good way — it feels native. Add warm amber as the accent to keep it from feeling cold. This is the most "intentional brand system" approach.
+    </div>
+
+    <div class="frame vc">
+      <nav class="nav">
+        <svg viewBox="0 0 500 250" width="180" height="90" style="display:block">
+          <path d="M57.473 137.789V146.33C57.473 161.437 50.352 168.986 36.117 168.986H24.603C10.365 168.986 3.247 161.437 3.247 146.33V58.307C3.247 43.203 10.365 35.651 24.603 35.651H36.117C50.352 35.651 57.473 43.204 57.473 58.307V73.349H39.645V59.607C39.645 54.407 36.981 51.807 31.66 51.807H28.132C23.426 51.807 21.075 54.407 21.075 59.607V145.031C21.075 150.23 23.425 152.83 28.132 152.83H32.589C37.293 152.83 39.646 150.23 39.646 145.031V137.789H57.473Z" fill="#FFEC3C"/>
+          <path d="M111.142 168.986V108.446H89.229V168.986H71.401V35.651H89.229V92.291H111.142V35.651H128.97V168.986H111.142Z" fill="#FFEC3C"/>
+          <path d="M145.682 168.986V35.651H176.695C193.408 35.651 201.765 44.193 201.765 61.278V149.674C201.765 162.551 194.645 168.987 180.409 168.987H145.682V168.986ZM163.51 152.83H176.881C181.585 152.83 183.938 150.851 183.938 146.889V61.464C183.938 55.028 181.274 51.808 175.952 51.808H163.51V152.83Z" fill="#FFEC3C"/>
+          <path d="M257.103 100.461C266.388 102.94 271.031 108.571 271.031 117.36V146.329C271.031 161.436 263.91 168.985 249.675 168.985H237.605C223.367 168.985 216.248 161.436 216.248 146.329V137.788H234.076V145.03C234.076 150.229 236.426 152.829 241.133 152.829H245.218C250.54 152.829 253.203 150.229 253.203 145.03V117.545C253.203 111.728 249.736 108.817 242.804 108.817H237.976V93.774H240.576C247.509 93.774 250.975 90.867 250.975 85.046V59.79C250.975 54.59 248.312 51.99 242.99 51.99H240.576C235.87 51.99 233.519 54.59 233.519 59.79V73.347H215.692V58.491C215.692 43.263 222.809 35.649 237.047 35.649H247.446C261.681 35.649 268.802 43.263 268.802 58.491V85.047C268.803 93.469 264.903 98.605 257.103 100.461Z" fill="#FFEC3C"/>
+          <path d="M349.545 33.249C349.545 33.249 325.793 58.914 316.782 67.923L353.095 70.926L350.637 40.621" fill="#3F51B5"/>
+          <path d="M355.552 72.564L391.318 75.567C391.318 75.567 380.397 111.334 345.177 153.652C345.177 153.652 350.91 105.6 354.459 74.202" fill="#3F51B5"/>
+          <path d="M347.088 3.48999C347.088 3.48999 366.746 101.232 335.621 176.586C335.621 176.586 339.443 180.408 324.701 182.045C309.958 183.684 298.49 171.672 286.476 181.5C286.476 181.5 281.016 193.512 302.858 195.152C324.701 196.789 363.469 183.138 372.206 197.334C372.206 197.334 378.759 205.527 366.2 207.711C353.64 209.895 324.701 198.428 327.976 236.106" stroke="black" stroke-width="5.4604" stroke-miterlimit="10" stroke-linecap="round"/>
+          <path d="M353.095 33.795C353.095 33.795 374.937 52.361 391.045 72.837L354.734 70.653" fill="#FFEC3C"/>
+          <path d="M313.78 71.745C313.78 71.745 335.075 119.797 341.628 151.74C341.628 151.74 352.003 118.978 351.457 74.475" fill="#FFEC3C"/>
+          <path d="M349.818 23.693C349.818 23.693 337.259 40.075 306.681 69.562C306.681 69.562 333.437 129.081 338.351 169.487C338.351 169.487 383.672 119.798 398.415 77.207C398.415 77.207 380.396 52.088 349.818 23.693Z" stroke="black" stroke-width="5.4604" stroke-miterlimit="10"/>
+          <path d="M327.843 222.277C327.843 222.277 311.795 206.638 307.932 208.47C307.932 208.47 306.846 208.173 306.497 211.714C306.147 215.257 305.804 218.525 305.804 218.525L304.707 218.775L305.491 220.431C305.491 220.431 302.607 227.47 302.038 228.548C301.469 229.63 301.387 233.45 312.103 230.403C322.82 227.358 325.317 225.501 326.93 226.626C328.545 227.755 340.017 240.29 344.107 240.651C348.195 241.014 347.463 236.901 347.488 235.809C347.51 234.717 348.163 229.815 348.163 229.815L350.098 228.766L349.047 226.83C349.047 226.83 353.027 219.543 353.046 218.723C353.063 217.905 352.861 214.623 345.722 216.381C338.582 218.141 327.843 222.277 327.843 222.277Z" fill="#3F51B5"/>
+        </svg>
+        <ul class="nav-links"><li class="active">Home</li><li>About Us</li><li>Research</li><li>Forms</li></ul>
+        <button class="nav-cta">Donate</button>
+      </nav>
+      <div class="hero-strip">
+        <div class="hero-text">
+          <div class="hero-badge"><span></span>Global Support Community</div>
+          <h2>You are not alone<br />in this <em>journey</em></h2>
+          <p>CHD3 Foundation connects families, supports research, and advocates for those living with CHD3-related conditions worldwide.</p>
+          <button class="hero-btn">Join Our Community</button>
+        </div>
+        <div class="stat-card">
+          <div class="stat-item"><div class="stat-num">237</div><div class="stat-lbl">Diagnosed cases worldwide</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">787</div><div class="stat-lbl">Support group members</div></div>
+          <div class="stat-div"></div>
+          <div class="stat-item"><div class="stat-num">7</div><div class="stat-lbl">Published research papers</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="verdict-icon">✅</div>
+      <div class="verdict-body"><strong>Verdict: most coherent brand system.</strong> The logo and the UI feel like one designed thing. The risk: this is closer to the current site's indigo-heavy feel, which you said you wanted to move away from. The warm backgrounds and amber accent help a lot, but it's still indigo-primary. If the current site's biggest problem was the cold gray + indigo combo, this fixes that. If the problem was indigo itself, this doesn't.</div>
+    </div>
+  </div>
+
+</body>
+</html>
