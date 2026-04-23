@@ -65,8 +65,8 @@ export const Main = () => {
               variants={fadeUp}
               className="text-4xl md:text-5xl font-extrabold text-text leading-tight mb-5"
             >
-              Supporting families<br />
-              living with <span className="text-primary">CHD3</span>
+              A community for individuals<br />
+              and families living with <span className="text-primary">CHD3</span>
             </motion.h1>
 
             <motion.p
@@ -87,18 +87,16 @@ export const Main = () => {
               className="flex flex-wrap gap-3"
             >
               <a
-                href="https://www.facebook.com/groups/1742254126095885"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#support"
                 className="px-6 py-3 rounded-[10px] bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
               >
-                Join Our Community
+                Find Support
               </a>
               <NextLink
                 href="/about"
                 className="px-6 py-3 rounded-[10px] border-2 border-primary text-primary font-semibold text-sm hover:bg-primary-light transition-colors"
               >
-                Meet the Team
+                Who We Are
               </NextLink>
             </motion.div>
           </div>
@@ -155,7 +153,7 @@ export const Main = () => {
       </section>
 
       {/* Feature cards */}
-      <section className="bg-neutral-50 border-t border-border">
+      <section id="support" className="bg-neutral-50 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold tracking-widest uppercase text-primary block mb-3">
@@ -198,33 +196,6 @@ export const Main = () => {
         </div>
       </section>
 
-      {/* CTA banner */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="bg-primary rounded-[16px] px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
-        >
-          <div>
-            <h3 className="text-xl font-bold text-white mb-2">
-              Ready to connect with others?
-            </h3>
-            <p className="text-sm text-white/70">
-              Our community is here for every step of the journey — diagnosis, treatment, and beyond.
-            </p>
-          </div>
-          <a
-            href="https://www.facebook.com/groups/1742254126095885"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 px-6 py-3 rounded-[10px] bg-white text-primary font-bold text-sm hover:bg-blue-50 transition-colors"
-          >
-            Join Today
-          </a>
-        </motion.div>
-      </section>
     </>
   );
 };
